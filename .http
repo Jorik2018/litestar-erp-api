@@ -1,0 +1,86 @@
+@baseUrl = http://127.0.0.1:8000
+@contentType = application/json
+
+### Healthcheck Memgraph
+GET {{baseUrl}}/people/memgraph/test
+Accept: {{contentType}}
+
+###
+
+### Listar personas
+GET {{baseUrl}}/people/
+Accept: {{contentType}}
+
+###
+
+### Obtener persona por id
+GET {{baseUrl}}/people/1
+Accept: {{contentType}}
+
+###
+
+### Crear persona
+POST {{baseUrl}}/people/
+Content-Type: {{contentType}}
+Accept: {{contentType}}
+
+{
+  "id": 1,
+  "name": "Ana",
+  "age": 28
+}
+
+###
+
+### Crear otra persona
+POST {{baseUrl}}/people/
+Content-Type: {{contentType}}
+Accept: {{contentType}}
+
+{
+  "id": 2,
+  "name": "Luis",
+  "age": 35
+}
+
+###
+
+### Actualizar persona completa o parcial
+PATCH {{baseUrl}}/people/1
+Content-Type: {{contentType}}
+Accept: {{contentType}}
+
+{
+  "name": "Ana Maria",
+  "age": 29
+}
+
+###
+
+### Actualizar solo nombre
+PATCH {{baseUrl}}/people/1
+Content-Type: {{contentType}}
+Accept: {{contentType}}
+
+{
+  "name": "Ana López"
+}
+
+###
+
+### Actualizar solo edad
+PATCH {{baseUrl}}/people/1
+Content-Type: {{contentType}}
+Accept: {{contentType}}
+
+{
+  "age": 30
+}
+
+###
+
+### Eliminar persona
+DELETE {{baseUrl}}/people/1
+Accept: {{contentType}}
+
+###
